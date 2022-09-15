@@ -86,26 +86,37 @@ function App() {
             type="search"
             placeholder="eg. akon"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) =>{
+                if(radio=="")
+                {
+                  alert("Please select show or actor");
+                }
+                else{
+                  setInput(e.target.value)
+                }
+               
+              }}
+           
           />
         </div>
       </form>
+
       {radio === "actor" ? (
         showActorData.length !== 0 ? (
           <Actor data={showActorData} />
         ) : (
-          <h2>No data</h2>
+          <h2 className="noData" >No data</h2>
         )
       ) : radio == "show" ? (
         showData.length !== 0 ? (
           <Shows data={showData} />
         ) : (
-          <h2>No data</h2>
+          <h2 className="noData" >No data</h2>
         )
       ) : (
-        <h2>No data</h2>
+        <h2 className="noData" >No data</h2>
       )}
-    </div>
+      </div>
   );
 }
 
