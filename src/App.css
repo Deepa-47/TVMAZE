@@ -95,3 +95,11 @@ label{
 .card-title{
   font-size: 23px;
 }
+
+@media screen and (max-width: 800){
+  .App {
+    
+    width: 80%;
+    
+  }
+}
